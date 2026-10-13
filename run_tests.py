@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-PROJECTS = ("counter", "fsm_traffic", "fifo")
+PROJECTS = ("counter", "fsm_traffic", "fifo", "uart_tx")
 
 
 def main():

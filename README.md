@@ -10,6 +10,7 @@ self-checking testbench. Simulated with Icarus Verilog.
 | `counter/` | 4-bit counter with synchronous reset and enable. Wraps from 15 to 0. |
 | `fsm_traffic/` | 3-state traffic light FSM (RED -> GREEN -> YELLOW) with synchronous reset and enable. |
 | `fifo/` | 8-entry, 8-bit synchronous FIFO with directed and 500-cycle seeded-random scoreboard tests. |
+| `uart_tx/` | 8-bit UART transmitter (8N1) with a testbench checking frame bits and busy timing. |
 
 Each testbench prints `PASS` or `FAIL` for every check, so no waveform
 inspection is needed to see whether the design is correct.
@@ -22,7 +23,7 @@ Run every project's testbench from the repository root:
 
 Or run one project's testbench manually:
 
-    cd counter        # or fsm_traffic
+    cd counter        # or fsm_traffic, fifo, uart_tx
     iverilog -g2012 -o sim design.v tb.v && vvp sim
 
 The test runner uses temporary directories for simulation outputs and exits
